@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Example</title>
 
 <style>
 body {
@@ -16,8 +16,9 @@ body {
 
     <button onclick = " show();">Press!</button>
     <div id = "container" style = "visibility: hidden">
-      <img id = "parent" src = "..\img\Map.PNG" style = "transform: rotate(90deg);" />
-      <img id = "element" src = "..\img\moonbuggy.png" />
+      <div id="parent" style="background-color: #8f9190">
+        <div id="element" style="background-color: #c712be; border-radius: 50%"></div>
+      </div>
     </div>
 
     <script>
@@ -30,10 +31,10 @@ body {
         // GPSRefresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
 
         //method 2 (preferred)
-        var map = new OfflineMaps(400, 800, 25, 25); //constructed with dimensions of parent and element
+        var map = new OfflineMaps(400, 400, 25, 25); //constructed with dimensions of parent and element
         map.refresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
       }
     </script>
-    <script src = "OfflineMaps.js"></script>
+    <script src = "..\src\OfflineMaps.js"></script>
   </body>
 </html>

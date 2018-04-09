@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+<style>
+body {
+  text-align: center;
+  align-items: center;
+}
+</style>
+
+  </head>
+  <body>
+
+    <button onclick = " show();">Press!</button>
+    <div id = "container" style = "visibility: hidden">
+      <img id = "parent" src = "..\img\Map.PNG" style = "transform: rotate(90deg);" />
+      <img id = "element" src = "..\img\moonbuggy.png" />
+    </div>
+
+    <script>
+      function show(){
+        document.getElementById("container").style.visibility = "visible";
+
+        //either of these 2 ways is fine to use
+        //method 1
+        // setDimensions(400, 800, 25, 25);
+        // GPSRefresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
+
+        //method 2 (preferred)
+        var map = new OfflineMaps(400, 800, 25, 25); //constructed with dimensions of parent and element
+        map.refresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
+      }
+    </script>
+    <script src = "OfflineMaps.js"></script>
+  </body>
+</html>

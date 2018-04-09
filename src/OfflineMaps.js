@@ -3,7 +3,7 @@
 //north long limit: 34.711180
 //south long limit: 34.709558
 
-class OfflineMaps{
+class IconMap{
 
   constructor (width, height, elemWidth, elemHeight){
     this.width = width;

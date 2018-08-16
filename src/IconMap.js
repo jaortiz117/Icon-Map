@@ -1,3 +1,7 @@
+/**********************************
+author: Javier Ortiz
+**********************************/
+
 //west lat limit:  -86.655645
 //east lat limit:  -86.652185
 //north long limit: 34.711180

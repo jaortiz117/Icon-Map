@@ -1,0 +1,19 @@
+{
+  "name": "icon-map",
+  "version": "1.0.0",
+  "description": "Places icons within an image for animations or mapping",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaortiz117/Icon-Map.git"
+  },
+  "author": "Javier Ortiz <jaortiz117@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaortiz117/Icon-Map/issues"
+  },
+  "homepage": "https://github.com/jaortiz117/Icon-Map#readme"
+}

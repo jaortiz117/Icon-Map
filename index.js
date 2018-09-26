@@ -1,3 +1,3 @@
-var iconMap = require(".\src\IconMap.js");
+var iconMap = require("./src/IconMap.js");
 
 module.exports = iconMap;

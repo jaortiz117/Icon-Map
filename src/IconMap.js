@@ -7,7 +7,8 @@ author: Javier Ortiz
 //north long limit: 34.711180
 //south long limit: 34.709558
 
-module.exports = function IconMap{
+// module.exports = function IconMap{
+module.exports = class IconMap{
 
   constructor (width, height, elemWidth, elemHeight){
     this.width = width;

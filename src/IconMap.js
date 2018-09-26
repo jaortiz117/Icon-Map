@@ -27,6 +27,10 @@ module.exports = class IconMap{
     this.elemWidth = elemWidth;
     this.elemHeight = elemHeight;
   }
+
+  printer(){
+    console.log("tested");
+  }
 }
 var userDimensions;//deprecated, used as global variable
 

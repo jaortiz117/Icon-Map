@@ -8,3 +8,15 @@ Simple library for displaying an image within an image. Used in the 6th Gen Moon
 
 
 For now I'm just making the library more general to use. This way I can use it for the following years of the competition.
+
+## Install
+
+```
+$ npm install @jaortiz117/icon-maps
+```
+
+## Usage
+
+```js
+//TODO
+```

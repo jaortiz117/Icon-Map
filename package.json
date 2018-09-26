@@ -1,5 +1,5 @@
 {
-  "name": "icon-map",
+  "name": "@jaortiz117/icon-map",
   "version": "1.0.0",
   "description": "Places icons within an image for animations or mapping",
   "main": "index.js",

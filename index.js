@@ -1,3 +1,3 @@
-import "src\IconMap.js"
+var iconMap = require(".\src\IconMap.js");
 
-exports.printMsg = new IconMap();
+module.exports = iconMap;

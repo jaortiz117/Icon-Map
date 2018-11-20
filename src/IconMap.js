@@ -8,28 +8,42 @@ author: Javier Ortiz
 //south long limit: 34.709558
 
 // module.exports = function IconMap{
-module.exports = class IconMap{
+class IconMap{
 
-  constructor (width, height, elemWidth, elemHeight){
-    this.width = width;
-    this.height = height;
-    this.elemWidth = elemWidth;
-    this.elemHeight = elemHeight;
+  // constructor (width, height, elemWidth, elemHeight){
+  //   this.width = width;
+  //   this.height = height;
+  //   this.elemWidth = elemWidth;
+  //   this.elemHeight = elemHeight;
+  // }
+  constructor (parent, element, yBound, xBound){
+    this.paren = parent;
+    this.element = element;
+    this.yBound = yBound || false;
+    this.xBound = xBound || false;
+    // this.elemWidth = element.style.width;
+    // this.elemHeight = element.style.height;
   }
 
-  refresh(lat, long){
-    move(this.width, this.height, this.elemWidth, this.elemHeight, lat, long);
+  refresh(location){
+    move(this.paren, this.element, location.x, location.y, this.xBound, this.yBound);
   }
 
-  setDimensions(width, height, elemWidth, elemHeight){
-    this.width = width;
-    this.height = height;
-    this.elemWidth = elemWidth;
-    this.elemHeight = elemHeight;
-  }
+  // setDimensions(width, height, elemWidth, elemHeight){
+  //   this.width = width;
+  //   this.height = height;
+  //   this.elemWidth = elemWidth;
+  //   this.elemHeight = elemHeight;
+  // }
+  // setDimensions(parent, element){
+  //   this.width = parent.style.width;
+  //   this.height = parent.style.height;
+  //   this.elemWidth = element.style.width;
+  //   this.elemHeight = element.style.height;
+  // }
 
   printer(){
-    console.log("tested");
+    console.log("Hello World");
   }
 }
 var userDimensions;//deprecated, used as global variable
@@ -47,18 +61,18 @@ function GPSRefresh(lat, long){//setDimensions needs to be set first //deprecate
   move(userDimensions.w, userDimensions.h, userDimensions.ew, userDimensions.eh, lat, long);
 }
 
-function move(width, height, elemWidth, elemHeight, lat, long) {
-  var elem = document.getElementById("element");
+function move(paren, elem, x, y, xBound, yBound) {
+  // var elem = document.getElementById("element");
   var elemStyle = elem.style;
   elemStyle.position = "absolute";
-  elemStyle.width = elemWidth + "px";
-  elemStyle.height = elemHeight + "px";
+  elemStyle.width = elem.width + "px";
+  elemStyle.height = elem.height + "px";
 
-  var paren = document.getElementById("parent");
+  // var paren = document.getElementById("parent");
   var parenStyle = paren.style;
   parenStyle.position = "relative";
-  parenStyle.width = width + "px";
-  parenStyle.height = height + "px";
+  parenStyle.width = paren.width + "px";
+  parenStyle.height = paren.height + "px";
 
 
   paren = paren.getBoundingClientRect();
@@ -70,20 +84,23 @@ function move(width, height, elemWidth, elemHeight, lat, long) {
     right: paren.left + paren.width
   };
 
-      yPos = map(long, 34.709558, 34.711180, parenPos.top, parenPos.top + paren.height);
-      xPos = map(lat, -86.655645, -86.652185, parenPos.left, parenPos.left + paren.width);
+  yPos = map(y,
+    yBound.bottom || parenPos.top,
+    yBound.top || parentPos.top+paren.height,
+    parenPos.top,
+    parenPos.top + paren.height);
+  xPos = map(x,
+    xBound.bottom || parenPos.left,
+    xBound.top || parentPos.left+paren.width,
+    parenPos.left,
+    parenPos.left + paren.width);
+
       elem.style.top = yPos + 'px';
       elem.style.left = xPos + 'px';
-}
+    }
 
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
+    function map(x, in_min, in_max, out_min, out_max) {
+      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
 
-function getRndNumber(min, max){
-  return (Math.random() * (max - min) ) + min;
-}
-
-function map(x, in_min, in_max, out_min, out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+    module.exports = IconMap;

@@ -1,3 +1,11 @@
-var iconMap = require("./src/IconMap.js");
+const iconMap = require("./src/IconMap.js");
 
-module.exports = iconMap;
+exports.IconMap = iconMap;
+
+exports.getRndInteger = function(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+exports.getRndNumber = function(min, max){
+  return (Math.random() * (max - min) ) + min;
+}

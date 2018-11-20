@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Example</title>
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
 
-<style>
-body {
-  text-align: center;
-  align-items: center;
-}
+  <style>
+  body {
+    text-align: center;
+    align-items: center;
+  }
 </style>
 
-  </head>
-  <body>
+</head>
+<body>
 
-    <button onclick = " show();">Press!</button>
-    <div id = "container" style = "visibility: hidden">
-      <div id="parent" style="background-color: #8f9190">
-        <div id="element" style="background-color: #c712be; border-radius: 50%"></div>
-      </div>
+  <button onclick = " show();">Press!</button>
+  <div id = "container" style = "visibility: hidden">
+    <div id="parent" style="background-color: #8f9190">
+      <div id="element" style="background-color: #c712be; border-radius: 50%"></div>
     </div>
+  </div>
 
-    <script>
-      function show(){
-        document.getElementById("container").style.visibility = "visible";
+  <script>
+  const getRndInteger = function(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
 
-        //either of these 2 ways is fine to use
-        //method 1
-        // setDimensions(400, 800, 25, 25);
-        // GPSRefresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
+  const getRndNumber = function(min, max){
+    return (Math.random() * (max - min) ) + min;
+  }
+  function show(){
+    document.getElementById("container").style.visibility = "visible";
 
-        //method 2 (preferred)
-        var map = new IconMap(400, 400, 25, 25); //constructed with dimensions of parent and element
-        map.refresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
-      }
-    </script>
-    <script src = "..\src\IconMap.js"></script>
-  </body>
+    var map = new IconMap(document.getElementById("parent"), document.getElementById("element"), {
+      top: -86.655645,
+      bottom: -86.652185
+    }, {
+      top: 34.709558,
+      bottom: 34.711180
+    });
+    map.refresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
+  }
+  </script>
+  <script src = "..\src\IconMap.js"></script>
+</body>
 </html>

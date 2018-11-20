@@ -83,17 +83,21 @@ function move(paren, elem, x, y, xBound, yBound) {
     top: paren.top + window.scrollY,
     right: paren.left + paren.width
   };
+  // console.log(y);
+  // console.log(yBound.bottom);
 
   yPos = map(y,
     yBound.bottom || parenPos.top,
     yBound.top || parentPos.top+paren.height,
     parenPos.top,
     parenPos.top + paren.height);
-  xPos = map(x,
-    xBound.bottom || parenPos.left,
-    xBound.top || parentPos.left+paren.width,
-    parenPos.left,
-    parenPos.left + paren.width);
+    xPos = map(x,
+      xBound.bottom || parenPos.left,
+      xBound.top || parentPos.left+paren.width,
+      parenPos.left,
+      parenPos.left + paren.width);
+
+      // console.log(yPos);
 
       elem.style.top = yPos + 'px';
       elem.style.left = xPos + 'px';

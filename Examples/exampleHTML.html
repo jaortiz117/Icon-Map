@@ -16,8 +16,8 @@
 
   <button onclick = " show();">Press!</button>
   <div id = "container" style = "visibility: hidden">
-    <div id="parent" style="background-color: #8f9190">
-      <div id="element" style="background-color: #c712be; border-radius: 50%"></div>
+    <div id="parent" style="background-color: #8f9190; width: 400px; height: 400px;">
+      <div id="element" style="background-color: #c712be; border-radius: 50%; width: 25px; height: 25px;"></div>
     </div>
   </div>
 
@@ -39,7 +39,10 @@
       top: 34.709558,
       bottom: 34.711180
     });
-    map.refresh(getRndNumber(-86.655645, -86.652185), getRndNumber(34.709558,34.711180));
+    map.refresh({
+      y: getRndNumber(-86.655645, -86.652185),
+      x: getRndNumber(34.709558,34.711180)
+    });
   }
   </script>
   <script src = "..\src\IconMap.js"></script>

@@ -18,5 +18,18 @@ $ npm install @jaortiz117/icon-maps
 ## Usage
 
 ```js
-//TODO
+const iconMap = require("@jaortiz117/icon-map");
+//Note: DOM elements must have defined dimensions
+//instantiate the map
+var map = new iconMap.Map(document.getElementById("parentID"), document.getElementById("iconID"));
+
+var newYPosition = 10;
+var newXPosition = 10;
+
+//reposition icon within parent
+map.refresh({
+  y: newYPosition,
+  x: newXPosition
+});
+
 ```

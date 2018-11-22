@@ -1,6 +1,6 @@
 const iconMap = require("./src/IconMap.js");
 
-exports.IconMap = iconMap;
+exports.Map = iconMap;
 
 exports.getRndInteger = function(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;

@@ -10,7 +10,7 @@ For now I'm just making the library more general to use. This way I can use it f
 ## Install
 
 ```
-$ npm install @jaortiz117/icon-maps
+$ npm install @jaortiz117/icon-map
 ```
 
 ## Usage
